@@ -115,7 +115,7 @@
 ## 연락처  
 
 - 이메일: sarang1126611@naver.com
-- GitHub: [coeisarang]([https://github.com/GyeongMin2](https://github.com/coeisarang])  
+- GitHub: [coeisarang]([https://github.com/coeisarang])  
 
 ---
 
@@ -128,7 +128,6 @@
   - 클라이언트-서버 기반 간단한 소켓 통신 구현  
   - API를 활용한 데이터 렌더링  
 
-**[Github](https://github.com/GyeongMin2/JavaScriptPlayground)**  
 
 ### 2. **ResponsivePortfolio**  
 > HTML, CSS, JavaScript를 사용한 개인 포트폴리오 사이트  
@@ -136,5 +135,3 @@
 - 주요 기능:  
   - 반응형 레이아웃 설계  
   - CSS 트랜지션과 애니메이션을 활용한 인터랙션  
-
-**[Github](https://github.com/GyeongMin2/ResponsivePortfolio)**  
