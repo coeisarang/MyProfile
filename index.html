@@ -307,12 +307,80 @@
     .card.css h3  { color: #264de4; }     /* CSS 파랑 */
     .card.js h3   { color: #f0db4f; }     /* JS 노랑 */
 
+    /* PortPolio 슬라이드 전용 - 카드가 옆으로 붙게 수정 */
+    .page4 .tech-cards {
+    flex-wrap: nowrap;         /* 줄바꿈 방지 */
+    width: max-content;        /* 필요한 만큼만 가로 길이 확보 */
+    }
+
+
     @media (max-width: 768px) {
     .tech-cards {
         flex-direction: column;
         align-items: center;
     }
     }
+
+
+    .tech-section {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.tech-cards-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.tech-cards {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  min-width: 300px;
+  max-width: 300px;
+  margin: 0 10px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  z-index: 10;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 50%;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.slider-btn.hidden {
+  display: none;
+}
 
 
   </style>
@@ -511,12 +579,70 @@
         </div>
 
         <div class="page4">
-            <p><b>PORTPOLIO</b></p>
-
-
+            <section class="tech-section">
+            <h2>PortPolio</h2>
+            <div class="slider-container">
+                <button class="slider-btn prev">←</button>
+                <div class="tech-cards-wrapper">
+                    <div class="tech-cards">
+                        <div class="card">
+                        <h3>백엔드와의 협업</h3>
+                        <p>백엔드 개발자가 작업하기 쉬운 데이터베이스 구조와 테이블 명을 설계하며, API 및 DB 연동을 원활하게 진행합니다.</p>
+                        </div>
+                        <div class="card">
+                        <h3>프론트엔드 스타일링</h3>
+                        <p>디자인과 레이아웃을 제어하며, 반응형 웹 구현과 다양한 애니메이션 효과를 적용해 사용자 경험을 향상시킵니다.</p>
+                        </div>
+                        <div class="card">
+                        <h3>반응형 웹 디자인</h3>
+                        <p>미디어 쿼리를 사용해 다양한 해상도에서도 일관된 UI/UX를 제공하며, 브라우저 호환성 테스트도 함께 수행했습니다.</p>
+                        </div>
+                        <div class="card">
+                        <h3>반응형 웹 디자인</h3>
+                        <p>미디어 쿼리를 사용해 다양한 해상도에서도 일관된 UI/UX를 제공하며, 브라우저 호환성 테스트도 함께 수행했습니다.</p>
+                        </div>
+                        <div class="card">
+                        <h3>반응형 웹 디자인</h3>
+                        <p>미디어 쿼리를 사용해 다양한 해상도에서도 일관된 UI/UX를 제공하며, 브라우저 호환성 테스트도 함께 수행했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn next">→</button>
+            </div>
+            </section>
         </div>
 
+        <script>
+        const sliderSection = document.querySelector('.page4');
+        const sliderContainer = sliderSection.querySelector('.tech-cards');
+        const card = sliderSection.querySelector('.card');
+        const cards = sliderSection.querySelectorAll('.card');
+        const prevBtn = sliderSection.querySelector('.prev');
+        const nextBtn = sliderSection.querySelector('.next');
 
+        const cardWidth = card.offsetWidth + 20; // width + margin
+        const visibleCards = 3; // 한 화면에 보여질 카드 수
+        const totalCards = cards.length;
+
+        let scrollAmount = 0;
+
+        // 슬라이드 버튼 조건 처리
+        if (totalCards <= visibleCards) {
+            prevBtn.classList.add("hidden");
+            nextBtn.classList.add("hidden");
+        }
+
+        prevBtn.addEventListener('click', () => {
+            scrollAmount = Math.max(scrollAmount - cardWidth, 0);
+            sliderContainer.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxScroll = (cardWidth * (totalCards - visibleCards));
+            scrollAmount = Math.min(scrollAmount + cardWidth, maxScroll);
+            sliderContainer.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+        </script>
 
     </div>
 </div>
