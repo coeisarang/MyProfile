@@ -112,7 +112,7 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    padding: 20px;
+    padding: 30px;
     }
 
     @keyframes fadeUp {
@@ -263,12 +263,6 @@
     font-family: 'Arial', sans-serif;
     }
 
-    .tech-section h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #333;
-    }
-
     .tech-cards {
     display: flex;
     justify-content: center;
@@ -276,14 +270,6 @@
     flex-wrap: wrap;
     }
 
-    .card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
 
     .card h3 {
     font-size: 1.5rem;
@@ -340,9 +326,9 @@
     }
 
     .card {
-      min-width: 450px;
-      max-width: 450px;
-      height: 400px;
+      min-width: 390px;
+      max-width: 390px;
+      height: 380px;
       margin: 20px 10px;
       padding: 20px;
       box-sizing: border-box;
@@ -386,7 +372,7 @@
       display: flex;
       gap: 30px; /* 탭과 설명 사이 간격 */
       max-width: 1000px;
-      margin: 80px 150px;
+      margin: 80px 120px;
       min-height: 480px;
     }
 
@@ -414,7 +400,7 @@
       border-color: #000000;
       font-weight: bold;
       color: #000000;
-      background-color: #f0f8ff;
+      background-color: #e8e6e6;
     }
 
 
@@ -437,7 +423,7 @@
     }
 
     .p3f{
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 0 auto 40px;
       color: #333;
       text-align: center;
@@ -486,7 +472,7 @@
     }
 
     .footer {
-      background-color: #989898;
+      background-color: #c6c5c5;
       color: white;
       height: 50px;
 
@@ -500,7 +486,227 @@
       font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
     }
 
+/* 페이지 2 */
+  .page2{
+    max-width: 1000px;
+    margin: 0 auto;
+    margin: 75px auto;
+  }
 
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-family: 'Georgia', serif;
+  }
+
+  .profile-section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .photo img {
+    width: 280px;
+    height: auto;
+    border: 1px solid #444;
+  }
+
+  .info {
+    flex: 1;
+  }
+
+  .info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .age {
+    font-size: 1rem;
+    color: #666;
+    margin-left: 10px;
+  }
+
+  .intro {
+    margin: 20px 0 30px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  /* 4개 섹션 열 */
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .column {
+    flex: 1 1 220px;
+  }
+
+  .section-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+  }
+
+  .column p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+
+  .column strong {
+    display: inline-block;
+    width: 100px;
+    font-weight: 600;
+    color: #000;
+  }
+  .fade-target {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-target.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* 중앙 선 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 790px;
+  background: #ccc;
+}
+
+/* 아이템 공통 */
+.timeline-item {
+  width: 50%;
+  padding: 20px 40px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 왼쪽 아이템 */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.left .content {
+  position: relative;
+}
+
+/* 오른쪽 아이템 */
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item.right .content {
+  position: relative;
+}
+
+/* 공통 연도 원 */
+.yearleft {
+  position: absolute;
+  top: 0;
+  border: 2px solid #dedede;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 56px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  z-index: 10;
+  transform: translate(19%, -50%);
+  background-color: #e1e1e1;
+}
+
+.yearright {
+  position: absolute;
+  top: 0;
+  transform: translate(-116%, -50%);
+  border: 2px solid #dedede;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 56px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  z-index: 10;
+  background-color: #e1e1e1;
+}
+
+/* 카드 디자인 */
+.card2 {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 0;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    text-align: left;
+  }
+
+  .year {
+    left: 0;
+    transform: translate(-10%, -50%);
+  }
+}
+
+.card2 h3{
+  font-size: 15px;
+  font-weight: bold;
+}
+.card2 p{
+  font-size: 12px;
+}
+a{
+  color: #000;
+  text-decoration: none;
+}
   </style>
 </head>
 <body>
@@ -595,10 +801,184 @@
             window.onload = type;
             </script>
         </div>
+    <div class="profile-section fade-target">
+      <div id="page2" class="page2">
+          <h2 class="p3f">PROFLIE</h2>
+          <div class="profile-section">
+          <!-- 사진 영역 -->
+          <div class="photo">
+            <img src="/images/me.jpg" alt="최사랑 증명사진">
+          </div>
 
-        <div id="page2" class="page2">
-            <img class="p2" width="100%" src="/images/p3.jpg">
+          <!-- 내용 영역 -->
+          <div class="info">
+            <h2>최사랑</h2>
+            <p class="intro">
+              ‘도전 하지 않으면 얻는 것은 없다’
+              안녕하세요 도전과 열정적인 자세로 임하는 최사랑입니다.<br>
+              컴퓨터공학을 전공하며 감각적인 화면을 개발하는데 강점을 가지고 있습니다!
+            </p>
+
+            <div class="columns">
+              <!-- Profile -->
+              <div class="column">
+                <h3 class="section-title">Profile</h3>
+                <p><strong>Name</strong> 최사랑</p>
+                <p><strong>E-mail</strong> sarang1126611@naver.com</p>
+                <p><strong>GIT</strong><a href="https://github.com/coeisarang">https://github.com/coeisarang</a></p>
+                <p><strong>Notion</strong><a href="https://buttoned-butter-66d.notion.site/077b3b3609d740e395066a6ae060c43f">Notion</a></p>
+              </div>
+
+              <!-- Education -->
+              <div class="column">
+                <h3 class="section-title">Education</h3>
+                <p><strong>2024.08</strong> 백석대학교 컴퓨터공학과</p>
+                <p><strong>2019.12</strong> 안산고등학교 이과</p>
+              </div>
+
+              <!-- Certification -->
+              <div class="column">
+                <h3 class="section-title">Certification</h3>
+                <p><strong>2025.07</strong>SQLD</p>
+                <p><strong>2023.03</strong>운전면허증 2종 보통</p>
+              </div>
+
+              <!-- Awards -->
+              <div class="column">
+                <h3 class="section-title">Awards</h3>
+                <p><strong>2024.06</strong> 창업발명공모전 단체상</p>
+                <p><strong>2023.12</strong> 멀티미디어 경진대회 우수상</p>
+              </div>
+            </div>
+          </div>
         </div>
+     </div>
+   </div>
+        <script>
+          // script.js
+              document.addEventListener("DOMContentLoaded", () => {
+                const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("visible");
+                      observer.unobserve(entry.target); // 한 번만 실행
+                    }
+                  });
+                });
+
+                document.querySelectorAll(".fade-target").forEach(el => {
+                  observer.observe(el);
+                });
+              });
+
+        </script>
+
+        <div class="timeline">
+
+          <!-- 타임라인 아이템 (왼쪽) -->
+          <div class="timeline-item left fade-target">
+            <div class="content">
+              <span class="yearleft">2025.02</span>
+              <div class="card2">
+                <h3>👩‍🎓천재교육 풀스택 개발자 과정</h3>
+                <p>에듀테크를 이용한 학생들과 선생님을 위한 웹사이트를 제작하며 프론트/백엔드 에대한 전반적인 기술을 익혔습니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 타임라인 아이템 (오른쪽) -->
+          <div class="timeline-item right fade-target">
+            <div class="content">
+              <span class="yearright">2024.08</span>
+              <div class="card2">
+                <h3>👩‍🎓컴퓨터공학부 졸업</h3>
+                <p>4년간의 학부생활을 마치고 졸업을 하였습니다. 전공인 컴퓨터 공학에 대한 기초 지식과 심화지식을 쌓았습니다.</p>
+              </div>
+            </div>
+          </div>
+          <!-- 타임라인 아이템 (왼쪽) -->
+          <div class="timeline-item left fade-target">
+            <div class="content">
+              <span class="yearleft">2024.06</span>
+              <div class="card2">
+                <h3>🏆️ 창업발명공모전 단체상</h3>
+                <p>AndroidStudio를 이용하여 온도별 옷차림을 추천해주는 웹을 개발하였습니다. 날씨 API를 이용하여 실시간 날씨를 불러오는 기능을 탑재하였습니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right fade-target">
+            <div class="content">
+              <span class="yearright">2023.12</span>
+              <div class="card2">
+                <h3>🏆️멀티미디어 경진대회 우수상</h3>
+                <p>OpenCV를 이용하여 시각장애인을 위한 얼굴인식 프로그램을 개발하였습니다. 캐스캐이드 라이브러리를 이용하여 얼굴인식의 정확도를 높였습니다. </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 타임라인 아이템 (왼쪽) -->
+          <div class="timeline-item left fade-target">
+            <div class="content">
+              <span class="yearleft">2023.12</span>
+              <div class="card2">
+                <h3>🫶코드클럽 한국위원회<br> 대학생 코딩 봉사단</h3>
+                <p>전공인 컴퓨터공학을 살려 초등학생 3학년을 대상으로 하는 코딩수업을 진행하였습니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right fade-target">
+            <div class="content">
+              <span class="yearright">2023.02</span>
+              <div class="card2">
+                <h3>👩🏻‍💼일본 게임회사 인턴십</h3>
+                <p>1달간 일본 신주쿠에 거주 하며 일본의 게임회사인 UtoPlanet 에서 HP업데이트와 영업업무를 담당하였습니다.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // ⏩ 등장 애니메이션
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.fade-target').forEach(el => {
+        observer.observe(el);
+      });
+
+    //   // 🎨 랜덤 파스텔 색상 함수
+    //   function getRandomPastelColor() {
+    //     const hue = Math.floor(Math.random() * 360); // 색상: 0~359
+    //     return `hsl(${hue}, 70%, 85%)`; // 파스텔: 채도 낮고 밝기 높음
+    //   }
+
+    //   // 🎨 각 .dot에 적용
+    //   const dots1 = document.querySelectorAll('.yearleft');
+    //   dots1.forEach(yearleft => {
+    //     yearleft.style.backgroundColor = getRandomPastelColor();
+    //   });
+
+    //   const dots2 = document.querySelectorAll('.yearright');
+    //   dots2.forEach(yearright => {
+    //     yearright.style.backgroundColor = getRandomPastelColor();
+    //   });
+       });
+
+    // 🎨 각 .dot에 적용
+
+
+  </script>
 
         <div class="page3" id="page3">
           <h2 class="p3f">SKILL</h2>
